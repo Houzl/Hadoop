@@ -15,6 +15,7 @@ Output for Reducer:
 PageA newPR(PageA) OutLink1 OutLink2 OutLink3 ... OutLinkN
 
 newPR(PageA) used following formula:
+
 ![PR(A) = (1-d)/N + d(PR(B)/l(B) + PR(B)/l(B) + PR(B)/l(B) + ...)](https://wikimedia.org/api/rest_v1/media/math/render/svg/7c3da6d608ba21cac0bbfc96e59615ffe8f33360 "PageRank scores formula from wikipedia")
 
 PageRankTestData, Comes from https://en.wikipedia.org/wiki/PageRank: should be:
