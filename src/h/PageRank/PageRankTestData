@@ -1,0 +1,11 @@
+A 0.1 
+B 0.1 C
+C 0.1 B
+D 0.1 A B
+E 0.1 B D F
+F 0.1 B E
+G 0.1 B E
+H 0.1 B E
+I 0.1 B E
+J 0.1 E
+K 0.1 E
