@@ -1,6 +1,6 @@
 # Genetic Algorithm Using Hadoop
 
-### H3 There are 4 steps to solve genetic algorithm:
+### There are 4 steps to solve genetic algorithm:
 
 1.	Initialization
 I used GA Pool Builder to randomly produce a desired number of valid chromosomes.
@@ -19,7 +19,7 @@ a.	A solution is found that satisfies minimum criteria
 b.	Fixed number of generations reached, it also called max number of iterations.
 
 
-### H3 I used 4 MapReduce job to solve this task:
+### I used 4 MapReduce job to solve this task:
 
 1.	GA Pool Builder
 I used a mapper class and a costumed InputFormat, SleepInputFormat.class which is learned from org.apache.hadoop.examples.SleepJob.SleepInputFormat, to use n mapper, produce m chromosomes without input.  I used org.apache.hadoop.mapred.lib.IdentityReducer.class as reduce class, which will only out the key-value pair directly with one task.
@@ -40,7 +40,7 @@ I used NLineInputFormat.class as InputFormat to let the mapper parallel work. An
 Output last generation, the target or the closest will be on top. Order by my modified fitness score. And the the closest chromosome to target will be on top.
 I didn’t using fitness Function given in the assignment, because target and target-1 will have the some fitnessScore. Actually, in our task, I think target-i and target+i should have same fitnessScore and target have the highest or lowest fitness score. In my implement, I used Math.abs(target - score) as fitness Function, the more close to the target the more close to 0. And the target’s fitnessscore is 0. 
 
-### H3 Command:
+### Command:
 
 ./bin/hadoop jar ./h.GeneticAlgorithm.Runner target chromosomesLength crossoverRate mutateRate maxIteration numMapper numReducer countPerMapper outputPath
 
