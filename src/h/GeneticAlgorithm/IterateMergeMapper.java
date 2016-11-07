@@ -1,0 +1,24 @@
+package h.GeneticAlgorithm;
+
+import java.io.IOException;
+
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.LongWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapred.MapReduceBase;
+import org.apache.hadoop.mapred.Mapper;
+import org.apache.hadoop.mapred.OutputCollector;
+import org.apache.hadoop.mapred.Reporter;
+
+public class IterateMergeMapper extends MapReduceBase
+    implements
+      Mapper<LongWritable, Text, IntWritable, Text> {
+
+  
+  @Override
+  public void map(LongWritable key, Text value, OutputCollector<IntWritable, Text> output,
+      Reporter reporter) throws IOException {
+    String[] text = value.toString().split("\t");
+    output.collect(new IntWritable(Integer.parseInt(text[0])), new Text(text[1]));
+  }
+}
